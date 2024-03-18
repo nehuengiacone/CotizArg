@@ -48,7 +48,11 @@
             this.lblCompra2 = new System.Windows.Forms.Label();
             this.timerCards = new System.Windows.Forms.Timer(this.components);
             this.barControl = new System.Windows.Forms.Panel();
+            this.btnAboutMe = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lblTitulo = new System.Windows.Forms.Label();
+            this.btnMinimizar = new System.Windows.Forms.Button();
+            this.btnCloseWindow = new System.Windows.Forms.Button();
             this.cardCotiza3 = new System.Windows.Forms.Panel();
             this.lblActuaDato3 = new System.Windows.Forms.Label();
             this.lblCotiVenta3 = new System.Windows.Forms.Label();
@@ -57,16 +61,12 @@
             this.lblVenta3 = new System.Windows.Forms.Label();
             this.lblCompra3 = new System.Windows.Forms.Label();
             this.lblTitulo3 = new System.Windows.Forms.Label();
-            this.btnAboutMe = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.btnMinimizar = new System.Windows.Forms.Button();
-            this.btnCloseWindow = new System.Windows.Forms.Button();
             this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.cardCotiza1.SuspendLayout();
             this.cardCotiza2.SuspendLayout();
             this.barControl.SuspendLayout();
-            this.cardCotiza3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.cardCotiza3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -93,9 +93,8 @@
             this.lblActuaDato1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(170)))), ((int)(((byte)(0)))));
             this.lblActuaDato1.Location = new System.Drawing.Point(179, 115);
             this.lblActuaDato1.Name = "lblActuaDato1";
-            this.lblActuaDato1.Size = new System.Drawing.Size(127, 13);
+            this.lblActuaDato1.Size = new System.Drawing.Size(0, 13);
             this.lblActuaDato1.TabIndex = 5;
-            this.lblActuaDato1.Text = "2024-03-15, 20:55:00";
             // 
             // lblCotiVenta1
             // 
@@ -104,9 +103,9 @@
             this.lblCotiVenta1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(170)))), ((int)(((byte)(0)))));
             this.lblCotiVenta1.Location = new System.Drawing.Point(176, 51);
             this.lblCotiVenta1.Name = "lblCotiVenta1";
-            this.lblCotiVenta1.Size = new System.Drawing.Size(149, 32);
+            this.lblCotiVenta1.Size = new System.Drawing.Size(134, 32);
             this.lblCotiVenta1.TabIndex = 5;
-            this.lblCotiVenta1.Text = "US$ 1.325";
+            this.lblCotiVenta1.Text = "US$ 0.00";
             // 
             // lblCotiCompra1
             // 
@@ -115,9 +114,9 @@
             this.lblCotiCompra1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(170)))), ((int)(((byte)(0)))));
             this.lblCotiCompra1.Location = new System.Drawing.Point(176, 11);
             this.lblCotiCompra1.Name = "lblCotiCompra1";
-            this.lblCotiCompra1.Size = new System.Drawing.Size(149, 32);
+            this.lblCotiCompra1.Size = new System.Drawing.Size(134, 32);
             this.lblCotiCompra1.TabIndex = 5;
-            this.lblCotiCompra1.Text = "US$ 1.325";
+            this.lblCotiCompra1.Text = "US$ 0.00";
             // 
             // lblActualizacion1
             // 
@@ -206,9 +205,8 @@
             this.lblActuaDato2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(170)))), ((int)(((byte)(0)))));
             this.lblActuaDato2.Location = new System.Drawing.Point(179, 114);
             this.lblActuaDato2.Name = "lblActuaDato2";
-            this.lblActuaDato2.Size = new System.Drawing.Size(127, 13);
+            this.lblActuaDato2.Size = new System.Drawing.Size(0, 13);
             this.lblActuaDato2.TabIndex = 5;
-            this.lblActuaDato2.Text = "2024-03-15, 20:55:00";
             // 
             // lblCotiVenta2
             // 
@@ -217,9 +215,9 @@
             this.lblCotiVenta2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(170)))), ((int)(((byte)(0)))));
             this.lblCotiVenta2.Location = new System.Drawing.Point(176, 51);
             this.lblCotiVenta2.Name = "lblCotiVenta2";
-            this.lblCotiVenta2.Size = new System.Drawing.Size(149, 32);
+            this.lblCotiVenta2.Size = new System.Drawing.Size(134, 32);
             this.lblCotiVenta2.TabIndex = 5;
-            this.lblCotiVenta2.Text = "US$ 1.325";
+            this.lblCotiVenta2.Text = "US$ 0.00";
             // 
             // lblCotiCompra2
             // 
@@ -228,9 +226,9 @@
             this.lblCotiCompra2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(170)))), ((int)(((byte)(0)))));
             this.lblCotiCompra2.Location = new System.Drawing.Point(176, 11);
             this.lblCotiCompra2.Name = "lblCotiCompra2";
-            this.lblCotiCompra2.Size = new System.Drawing.Size(149, 32);
+            this.lblCotiCompra2.Size = new System.Drawing.Size(134, 32);
             this.lblCotiCompra2.TabIndex = 5;
-            this.lblCotiCompra2.Text = "US$ 1.325";
+            this.lblCotiCompra2.Text = "US$ 0.00";
             // 
             // lblActualizacion2
             // 
@@ -291,6 +289,38 @@
             this.barControl.MouseMove += new System.Windows.Forms.MouseEventHandler(this.barControl_MouseMove);
             this.barControl.MouseUp += new System.Windows.Forms.MouseEventHandler(this.barControl_MouseUp);
             // 
+            // btnAboutMe
+            // 
+            this.btnAboutMe.BackgroundImage = global::Cotiza.Properties.Resources.info;
+            this.btnAboutMe.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnAboutMe.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAboutMe.FlatAppearance.BorderSize = 0;
+            this.btnAboutMe.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnAboutMe.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnAboutMe.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAboutMe.Location = new System.Drawing.Point(280, 3);
+            this.btnAboutMe.Name = "btnAboutMe";
+            this.btnAboutMe.Size = new System.Drawing.Size(20, 21);
+            this.btnAboutMe.TabIndex = 5;
+            this.btnAboutMe.UseVisualStyleBackColor = true;
+            this.btnAboutMe.Click += new System.EventHandler(this.btmAboutMe_Click);
+            this.btnAboutMe.MouseEnter += new System.EventHandler(this.btnAboutMe_MouseEnter);
+            this.btnAboutMe.MouseLeave += new System.EventHandler(this.btnAboutMe_MouseLeave);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox1.Image = global::Cotiza.Properties.Resources.moneda_de_dolar;
+            this.pictureBox1.Location = new System.Drawing.Point(12, 3);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(30, 21);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 5;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.barControl_MouseDown);
+            this.pictureBox1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.barControl_MouseMove);
+            this.pictureBox1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.barControl_MouseUp);
+            // 
             // lblTitulo
             // 
             this.lblTitulo.AutoSize = true;
@@ -305,6 +335,44 @@
             this.lblTitulo.MouseDown += new System.Windows.Forms.MouseEventHandler(this.barControl_MouseDown);
             this.lblTitulo.MouseMove += new System.Windows.Forms.MouseEventHandler(this.barControl_MouseMove);
             this.lblTitulo.MouseUp += new System.Windows.Forms.MouseEventHandler(this.barControl_MouseUp);
+            // 
+            // btnMinimizar
+            // 
+            this.btnMinimizar.BackColor = System.Drawing.Color.Transparent;
+            this.btnMinimizar.BackgroundImage = global::Cotiza.Properties.Resources.minimizar1;
+            this.btnMinimizar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnMinimizar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnMinimizar.FlatAppearance.BorderSize = 0;
+            this.btnMinimizar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnMinimizar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnMinimizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMinimizar.Location = new System.Drawing.Point(306, 3);
+            this.btnMinimizar.Name = "btnMinimizar";
+            this.btnMinimizar.Size = new System.Drawing.Size(20, 21);
+            this.btnMinimizar.TabIndex = 2;
+            this.btnMinimizar.UseVisualStyleBackColor = false;
+            this.btnMinimizar.Click += new System.EventHandler(this.btnMinimizar_Click);
+            this.btnMinimizar.MouseEnter += new System.EventHandler(this.btnMinimizar_MouseEnter);
+            this.btnMinimizar.MouseLeave += new System.EventHandler(this.btnMinimizar_MouseLeave);
+            // 
+            // btnCloseWindow
+            // 
+            this.btnCloseWindow.BackColor = System.Drawing.Color.Transparent;
+            this.btnCloseWindow.BackgroundImage = global::Cotiza.Properties.Resources.closewindowapplication_cerca_ventan_2874;
+            this.btnCloseWindow.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnCloseWindow.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCloseWindow.FlatAppearance.BorderSize = 0;
+            this.btnCloseWindow.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnCloseWindow.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnCloseWindow.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCloseWindow.Location = new System.Drawing.Point(332, 3);
+            this.btnCloseWindow.Name = "btnCloseWindow";
+            this.btnCloseWindow.Size = new System.Drawing.Size(20, 21);
+            this.btnCloseWindow.TabIndex = 1;
+            this.btnCloseWindow.UseVisualStyleBackColor = false;
+            this.btnCloseWindow.Click += new System.EventHandler(this.btnCloseWindow_Click);
+            this.btnCloseWindow.MouseEnter += new System.EventHandler(this.btnCloseWindow_MouseEnter);
+            this.btnCloseWindow.MouseLeave += new System.EventHandler(this.btnCloseWindow_MouseLeave);
             // 
             // cardCotiza3
             // 
@@ -329,9 +397,8 @@
             this.lblActuaDato3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(170)))), ((int)(((byte)(0)))));
             this.lblActuaDato3.Location = new System.Drawing.Point(179, 114);
             this.lblActuaDato3.Name = "lblActuaDato3";
-            this.lblActuaDato3.Size = new System.Drawing.Size(127, 13);
+            this.lblActuaDato3.Size = new System.Drawing.Size(0, 13);
             this.lblActuaDato3.TabIndex = 5;
-            this.lblActuaDato3.Text = "2024-03-15, 20:55:00";
             // 
             // lblCotiVenta3
             // 
@@ -340,9 +407,9 @@
             this.lblCotiVenta3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(170)))), ((int)(((byte)(0)))));
             this.lblCotiVenta3.Location = new System.Drawing.Point(176, 51);
             this.lblCotiVenta3.Name = "lblCotiVenta3";
-            this.lblCotiVenta3.Size = new System.Drawing.Size(149, 32);
+            this.lblCotiVenta3.Size = new System.Drawing.Size(134, 32);
             this.lblCotiVenta3.TabIndex = 5;
-            this.lblCotiVenta3.Text = "US$ 1.325";
+            this.lblCotiVenta3.Text = "US$ 0.00";
             // 
             // lblCotiCompra3
             // 
@@ -351,9 +418,9 @@
             this.lblCotiCompra3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(170)))), ((int)(((byte)(0)))));
             this.lblCotiCompra3.Location = new System.Drawing.Point(176, 11);
             this.lblCotiCompra3.Name = "lblCotiCompra3";
-            this.lblCotiCompra3.Size = new System.Drawing.Size(149, 32);
+            this.lblCotiCompra3.Size = new System.Drawing.Size(134, 32);
             this.lblCotiCompra3.TabIndex = 5;
-            this.lblCotiCompra3.Text = "US$ 1.325";
+            this.lblCotiCompra3.Text = "US$ 0.00";
             // 
             // lblActualiza3
             // 
@@ -406,76 +473,6 @@
             this.lblTitulo3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lblTitulo3.Click += new System.EventHandler(this.lblTitulos_Click);
             // 
-            // btnAboutMe
-            // 
-            this.btnAboutMe.BackgroundImage = global::Cotiza.Properties.Resources.info;
-            this.btnAboutMe.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnAboutMe.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAboutMe.FlatAppearance.BorderSize = 0;
-            this.btnAboutMe.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.btnAboutMe.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.btnAboutMe.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAboutMe.Location = new System.Drawing.Point(280, 3);
-            this.btnAboutMe.Name = "btnAboutMe";
-            this.btnAboutMe.Size = new System.Drawing.Size(20, 21);
-            this.btnAboutMe.TabIndex = 5;
-            this.btnAboutMe.UseVisualStyleBackColor = true;
-            this.btnAboutMe.Click += new System.EventHandler(this.btmAboutMe_Click);
-            this.btnAboutMe.MouseEnter += new System.EventHandler(this.btnAboutMe_MouseEnter);
-            this.btnAboutMe.MouseLeave += new System.EventHandler(this.btnAboutMe_MouseLeave);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox1.Image = global::Cotiza.Properties.Resources.moneda_de_dolar;
-            this.pictureBox1.Location = new System.Drawing.Point(12, 3);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(30, 21);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 5;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.barControl_MouseDown);
-            this.pictureBox1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.barControl_MouseMove);
-            this.pictureBox1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.barControl_MouseUp);
-            // 
-            // btnMinimizar
-            // 
-            this.btnMinimizar.BackColor = System.Drawing.Color.Transparent;
-            this.btnMinimizar.BackgroundImage = global::Cotiza.Properties.Resources.minimizar1;
-            this.btnMinimizar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnMinimizar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnMinimizar.FlatAppearance.BorderSize = 0;
-            this.btnMinimizar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.btnMinimizar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.btnMinimizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMinimizar.Location = new System.Drawing.Point(306, 3);
-            this.btnMinimizar.Name = "btnMinimizar";
-            this.btnMinimizar.Size = new System.Drawing.Size(20, 21);
-            this.btnMinimizar.TabIndex = 2;
-            this.btnMinimizar.UseVisualStyleBackColor = false;
-            this.btnMinimizar.Click += new System.EventHandler(this.btnMinimizar_Click);
-            this.btnMinimizar.MouseEnter += new System.EventHandler(this.btnMinimizar_MouseEnter);
-            this.btnMinimizar.MouseLeave += new System.EventHandler(this.btnMinimizar_MouseLeave);
-            // 
-            // btnCloseWindow
-            // 
-            this.btnCloseWindow.BackColor = System.Drawing.Color.Transparent;
-            this.btnCloseWindow.BackgroundImage = global::Cotiza.Properties.Resources.closewindowapplication_cerca_ventan_2874;
-            this.btnCloseWindow.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnCloseWindow.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCloseWindow.FlatAppearance.BorderSize = 0;
-            this.btnCloseWindow.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.btnCloseWindow.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.btnCloseWindow.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCloseWindow.Location = new System.Drawing.Point(332, 3);
-            this.btnCloseWindow.Name = "btnCloseWindow";
-            this.btnCloseWindow.Size = new System.Drawing.Size(20, 21);
-            this.btnCloseWindow.TabIndex = 1;
-            this.btnCloseWindow.UseVisualStyleBackColor = false;
-            this.btnCloseWindow.Click += new System.EventHandler(this.btnCloseWindow_Click);
-            this.btnCloseWindow.MouseEnter += new System.EventHandler(this.btnCloseWindow_MouseEnter);
-            this.btnCloseWindow.MouseLeave += new System.EventHandler(this.btnCloseWindow_MouseLeave);
-            // 
             // frmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -493,6 +490,8 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Activated += new System.EventHandler(this.frmPrincipal_Activated);
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmPrincipal_FormClosing);
             this.Load += new System.EventHandler(this.frmPrincipal_Load);
             this.cardCotiza1.ResumeLayout(false);
             this.cardCotiza1.PerformLayout();
@@ -500,9 +499,9 @@
             this.cardCotiza2.PerformLayout();
             this.barControl.ResumeLayout(false);
             this.barControl.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.cardCotiza3.ResumeLayout(false);
             this.cardCotiza3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

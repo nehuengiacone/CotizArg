@@ -9,12 +9,19 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using API;
+using System.Threading;
 
 namespace Cotiza
 {
     public partial class frmPrincipal : Form
     {
         private DolarApi dolarApi;
+        private Moneda dBlue;
+        private Moneda dOficial;
+        private Moneda dTarjeta;
+        private static string ultFechaActualizada = default;
+        private Thread thrActualizacion;
+        private bool loop = true;
 
         public frmPrincipal()
         {
@@ -37,7 +44,8 @@ namespace Cotiza
         //AboutMe
         private void btmAboutMe_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("GitHub del proyecto: https://github.com/nehuengiacone/CotizArg\n\nCotización:\nDatos de cotizaciones brindados por DolarApi\nhttps://dolarapi.com/docs", "Acerca de CotizArg", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            string legales = $"Aviso Legal: Información de CotizArg\r\n\r\nEl sistema de cotización del dólar en Argentina proporcionado en esta aplicación tiene un carácter meramente informativo y no debe considerarse como asesoramiento financiero o una recomendación para realizar transacciones comerciales o inversiones.\r\n\r\nLa información presentada aquí se obtiene de fuentes consideradas confiables, pero no podemos garantizar su exactitud, integridad o actualidad en todo momento. Nos esforzamos por mantener la información actualizada y precisa, pero los datos pueden estar sujetos a cambios sin previo aviso.\r\n\r\nLos usuarios deben tener en cuenta que las fluctuaciones en los mercados financieros pueden ocurrir rápidamente y pueden ser influenciadas por una variedad de factores, incluyendo pero no limitado a eventos económicos, políticos o sociales, así como cambios en las políticas gubernamentales.\r\n\r\nPor lo tanto, no nos hacemos responsables por ninguna pérdida o daño directo, indirecto, incidental, consecuente o de otro tipo que pueda surgir como resultado de la confianza en la información proporcionada en este sistema de cotización del dólar en Argentina.\r\n\r\nSe recomienda encarecidamente a los usuarios que consulten a profesionales financieros calificados antes de tomar decisiones basadas en la información presentada aquí.\r\n\r\nAl utilizar este sistema de cotización del dólar en Argentina, usted acepta que lo hace bajo su propio riesgo y responsabilidad.\r\n\r\nÚltima actualización: {DateTime.Now}";
+            MessageBox.Show($"GitHub del proyecto: https://github.com/nehuengiacone/CotizArg\n\nCotización:\nDatos de cotizaciones brindados por DolarApi\nhttps://dolarapi.com/docs\n\n{legales}", "Acerca de CotizArg", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
 
@@ -91,50 +99,6 @@ namespace Cotiza
             cardCotiza_Paint(cardCotiza1);
             cardCotiza_Paint(cardCotiza2);
             cardCotiza_Paint(cardCotiza3);
-
-            //llamada a la API para obtener la informacion de cada moneda
-            Moneda dBlue = dolarApi.getRequest("blue");
-            Moneda dOficial = dolarApi.getRequest("oficial");
-            Moneda dTarjeta = dolarApi.getRequest("tarjeta");
-
-            //Actualizo el contenido de las tarjetas con las monedas generadas.
-            //Si algo falla, la excepción mostrara información del fallo.
-            try
-            {
-                this.lblCotiCompra1.Text = $"US$ {dOficial.compra.ToString()}";
-                this.lblCotiVenta1.Text = $"US$ {dOficial.venta.ToString()}";
-                this.lblActuaDato1.Text = dOficial.parseFechaActualizacion();
-            }
-            catch (Exception ex)
-            {
-                this.lblTitulo1.ForeColor = System.Drawing.Color.Red;
-                this.cardCotiza1.Visible = false;
-            }
-
-            try
-            {
-                this.lblCotiCompra2.Text = $"US$ {dBlue.compra.ToString()}";
-                this.lblCotiVenta2.Text = $"US$ {dBlue.venta.ToString()}";
-                this.lblActuaDato2.Text = dBlue.parseFechaActualizacion();
-            }
-            catch(Exception ex)
-            {
-                this.lblTitulo2.ForeColor = System.Drawing.Color.Red;
-                this.cardCotiza2.Visible = false;
-            }
-
-            try
-            {
-                this.lblCotiCompra3.Text = $"US$ {dTarjeta.compra.ToString()}";
-                this.lblCotiVenta3.Text = $"US$ {dTarjeta.venta.ToString()}";
-                this.lblActuaDato3.Text = dTarjeta.parseFechaActualizacion();
-            }
-            catch(Exception ex)
-            {
-                this.lblTitulo3.ForeColor = System.Drawing.Color.Red;
-                this.cardCotiza3.Visible = false;
-            }
-
         }
 
         private void formPrincipal_Paint()
@@ -167,6 +131,116 @@ namespace Cotiza
             //create a region with the rounded rectangle path and apply it to the form
             card.Region = new Region(path);
         }
+
+
+
+
+        // Actualización de las tarjetas y subproceso de peticiones a DolarApi
+        private void setMonedas()
+        {
+            //llamada a la API para obtener la informacion de cada moneda
+            dBlue = dolarApi.getRequest("blue");
+            dOficial = dolarApi.getRequest("oficial");
+            dTarjeta = dolarApi.getRequest("tarjeta");
+        }
+        
+        private void setCardsInfo()
+        {
+            //Actualizo el contenido de las tarjetas con las monedas generadas.
+            //Si algo falla, la excepción mostrara información del fallo.
+            try
+            {
+                this.Invoke(new Action(() =>
+                {
+                    this.lblCotiCompra1.Text = $"US$ {dOficial.compra.ToString()}";
+                    this.lblCotiVenta1.Text = $"US$ {dOficial.venta.ToString()}";
+                    this.lblActuaDato1.Text = dOficial.parseFechaActualizacion();
+                }));
+            }
+            catch (Exception ex)
+            {
+                this.Invoke(new Action(() =>
+                {
+                    this.lblTitulo1.ForeColor = System.Drawing.Color.Red;
+                    this.cardCotiza1.Visible = false;
+                }));
+            }
+
+            try
+            {
+                this.Invoke(new Action(() =>
+                {
+                    this.lblCotiCompra2.Text = $"US$ {dBlue.compra.ToString()}";
+                    this.lblCotiVenta2.Text = $"US$ {dBlue.venta.ToString()}";
+                    this.lblActuaDato2.Text = dBlue.parseFechaActualizacion();
+                }));
+            }
+            catch (Exception ex)
+            {
+                this.Invoke(new Action(() =>
+                {
+                    this.lblTitulo2.ForeColor = System.Drawing.Color.Red;
+                    this.cardCotiza2.Visible = false;
+                }));
+            }
+
+            try
+            {
+                this.Invoke(new Action(() =>
+                {
+                    this.lblCotiCompra3.Text = $"US$ {dTarjeta.compra.ToString()}";
+                    this.lblCotiVenta3.Text = $"US$ {dTarjeta.venta.ToString()}";
+                    this.lblActuaDato3.Text = dTarjeta.parseFechaActualizacion();
+                }));
+            }
+            catch (Exception ex)
+            {
+                this.Invoke(new Action(() =>
+                {
+                    this.lblTitulo3.ForeColor = System.Drawing.Color.Red;
+                    this.cardCotiza3.Visible = false;
+                }));
+            }
+        }
+
+        //logica del subproceso
+        private void actualizarCards()
+        {
+            //Thread thrCambiarCards = new Thread(setCardsInfo);
+
+            while (loop)
+            {
+                if (ultFechaActualizada == default)
+                {
+                    setCardsInfo();
+                    ultFechaActualizada = dOficial.parseFechaActualizacion();
+                }
+                else if (ultFechaActualizada != dOficial.parseFechaActualizacion())
+                {
+                    //thrCambiarCards.Start();
+                    setCardsInfo();
+                    ultFechaActualizada = dOficial.parseFechaActualizacion();
+                    MessageBox.Show($"Hay una nueva cotización.\nLa misma se modificará.\nFecha: {ultFechaActualizada}", "CotizArg: Actualización", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+                Thread.Sleep(60000);
+            }
+        }
+
+        //En el formulario activo se ejecuta el subproceso de actualización de tarjetas
+        private void frmPrincipal_Activated(object sender, EventArgs e)
+        {
+            //Seteo la información de DolarApi en los laberls de las tarjetas
+            setMonedas();
+            thrActualizacion = new Thread(actualizarCards);
+            thrActualizacion.Start();
+        }
+
+        //Al cerrar el formulario, se detiene el subproceso de actualización de tarjetas
+        private void frmPrincipal_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            loop = false;
+        }
+
 
 
 
@@ -286,8 +360,6 @@ namespace Cotiza
             mx = e.X;
             my = e.Y;
         }
-
-
 
         private void barControl_MouseMove(object sender, MouseEventArgs e)
         {

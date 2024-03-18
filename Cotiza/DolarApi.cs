@@ -29,10 +29,10 @@ namespace API
                     var response = cliente.GetAsync(url+ urlMoneda).Result;
                     contenido = response.Content.ReadAsStringAsync().Result;
                     statuscode = response.StatusCode.ToString();
+                    watch.Stop();
 
                     Moneda moneda = JsonSerializer.Deserialize<Moneda>(contenido);
 
-                    watch.Stop();
 
                     if (response.IsSuccessStatusCode)
                     {
