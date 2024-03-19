@@ -204,23 +204,34 @@ namespace Cotiza
         }
 
         //logica del subproceso
-        private void actualizarCards()
+        private async void actualizarCards()
         {
-            //Thread thrCambiarCards = new Thread(setCardsInfo);
-
             while (loop)
             {
+                //Seteo la información de DolarApi en los laberls de las tarjetas
+                setMonedas();
+
                 if (ultFechaActualizada == default)
                 {
-                    setCardsInfo();
                     ultFechaActualizada = dOficial.parseFechaActualizacion();
-                }
+                    //Metodo asincrono para mostrar un MessageBox en un hilo sin suspender su ejecución
+                    await Task.Run(() =>
+                    {
+                        MessageBox.Show($"Se abrió el CotizArg.\nSe visualizará la cotización actual.\nFecha: {ultFechaActualizada}", "CotizArg: Actualización", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    });
+
+                    setCardsInfo();
+                }   
                 else if (ultFechaActualizada != dOficial.parseFechaActualizacion())
                 {
-                    //thrCambiarCards.Start();
+                    //Metodo asincrono para mostrar un MessageBox en un hilo sin suspender su ejecución
+                    await Task.Run(() =>
+                    {
+                        MessageBox.Show($"Hay una nueva cotización.\nLa misma se modificará.\nFecha: {ultFechaActualizada}", "CotizArg: Actualización", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    });
+                    
                     setCardsInfo();
                     ultFechaActualizada = dOficial.parseFechaActualizacion();
-                    MessageBox.Show($"Hay una nueva cotización.\nLa misma se modificará.\nFecha: {ultFechaActualizada}", "CotizArg: Actualización", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
                 Thread.Sleep(60000);
             }
@@ -229,8 +240,6 @@ namespace Cotiza
         //En el formulario activo se ejecuta el subproceso de actualización de tarjetas
         private void frmPrincipal_Activated(object sender, EventArgs e)
         {
-            //Seteo la información de DolarApi en los laberls de las tarjetas
-            setMonedas();
             thrActualizacion = new Thread(actualizarCards);
             thrActualizacion.Start();
         }
@@ -239,6 +248,14 @@ namespace Cotiza
         private void frmPrincipal_FormClosing(object sender, FormClosingEventArgs e)
         {
             loop = false;
+            if (thrActualizacion != null && thrActualizacion.IsAlive)
+            {
+                //Si el subproceso no finaliza en 1s, se Aborta agresivamente el thread
+                if (!thrActualizacion.Join(100))
+                {
+                    thrActualizacion.Abort();
+                }
+            }
         }
 
 
