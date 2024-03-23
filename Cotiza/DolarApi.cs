@@ -12,7 +12,7 @@ namespace API
 {
     class DolarApi
     {
-        private string url = "https://dolarapi.com/v1/dolares/";
+        private string urlDolarApi = "https://dolarapi.com/v1/dolares/";
 
         public Moneda getRequest(string urlMoneda)
         {
@@ -26,7 +26,9 @@ namespace API
                 try
                 {
                     cliente.DefaultRequestHeaders.Clear();
-                    var response = cliente.GetAsync(url+ urlMoneda).Result;
+
+                    var response = cliente.GetAsync(urlDolarApi + urlMoneda).Result;
+
                     contenido = response.Content.ReadAsStringAsync().Result;
                     statuscode = response.StatusCode.ToString();
                     watch.Stop();
@@ -39,12 +41,12 @@ namespace API
                         return moneda;
                     }
 
-                    
+
                     return null;
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show($"Ocurrio un problema con la petición a:\n{url+urlMoneda}\n{contenido}", $"Fallo la petición: {statuscode}", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show($"Ocurrio un problema con la petición a:\n{urlDolarApi + urlMoneda}\n{contenido}", $"Fallo la petición: {statuscode}", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
                     Moneda moneda = new Moneda();
                     return moneda;
@@ -53,7 +55,6 @@ namespace API
             }
 
         }
-
     }
 
     class Moneda
@@ -83,7 +84,7 @@ namespace API
             }
             catch(Exception ex)
             {
-                throw ex;
+                return "../../..";
             } 
 
 
