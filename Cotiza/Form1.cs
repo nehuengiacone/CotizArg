@@ -19,6 +19,7 @@ namespace Cotiza
         private Moneda dBlue;
         private Moneda dOficial;
         private Moneda dTarjeta;
+        private Moneda dBolsa;
         private static string ultFechaActualizada = default;
         private Thread thrActualizacion;
         private bool loop = true;
@@ -95,10 +96,14 @@ namespace Cotiza
         private void frmPrincipal_Load(object sender, EventArgs e)
         {
             //redondeo de esquinas de formulario principal y tarjetas
-            formPrincipal_Paint();
+            //formPrincipal_Paint();
             cardCotiza_Paint(cardCotiza1);
             cardCotiza_Paint(cardCotiza2);
             cardCotiza_Paint(cardCotiza3);
+            cardCotiza_Paint(cardCotiza4);
+            toolTipDashGo.SetToolTip(this.btnExtendGo, "Extender Dashboard");
+            toolTipDashBack.SetToolTip(this.btnExtendBack, "Comprimir Dashboard");
+
         }
 
         private void formPrincipal_Paint()
@@ -139,15 +144,27 @@ namespace Cotiza
         private void setMonedas()
         {
             //llamada a la API para obtener la informacion de cada moneda
-            dBlue = dolarApi.getRequest("blue");
+            try
+            {
+                dBlue = dolarApi.getRequest("blue");
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            
             dOficial = dolarApi.getRequest("oficial");
             dTarjeta = dolarApi.getRequest("tarjeta");
+            dBolsa = dolarApi.getRequest("bolsa");
+
         }
         
         private void setCardsInfo()
         {
             //Actualizo el contenido de las tarjetas con las monedas generadas.
             //Si algo falla, la excepción mostrara información del fallo.
+            //Si ocurre otro fallo dentro del cath, cierra el subproceso.
             try
             {
                 this.Invoke(new Action(() =>
@@ -159,11 +176,18 @@ namespace Cotiza
             }
             catch (Exception ex)
             {
-                this.Invoke(new Action(() =>
+                try
                 {
-                    this.lblTitulo1.ForeColor = System.Drawing.Color.Red;
-                    this.cardCotiza1.Visible = false;
-                }));
+                    this.Invoke(new Action(() =>
+                    {
+                        this.lblTitulo1.ForeColor = System.Drawing.Color.Red;
+                        this.cardCotiza1.Visible = false;
+                    }));
+                }
+                catch(Exception ex2)
+                {
+                    Application.Exit();
+                }
             }
 
             try
@@ -177,11 +201,18 @@ namespace Cotiza
             }
             catch (Exception ex)
             {
-                this.Invoke(new Action(() =>
+                try
                 {
-                    this.lblTitulo2.ForeColor = System.Drawing.Color.Red;
-                    this.cardCotiza2.Visible = false;
-                }));
+                    this.Invoke(new Action(() =>
+                    {
+                        this.lblTitulo2.ForeColor = System.Drawing.Color.Red;
+                        this.cardCotiza2.Visible = false;
+                    }));
+                }
+                catch (Exception ex2)
+                {
+                    Application.Exit();
+                }
             }
 
             try
@@ -195,11 +226,50 @@ namespace Cotiza
             }
             catch (Exception ex)
             {
-                this.Invoke(new Action(() =>
+                try
                 {
-                    this.lblTitulo3.ForeColor = System.Drawing.Color.Red;
-                    this.cardCotiza3.Visible = false;
-                }));
+                    this.Invoke(new Action(() =>
+                    {
+                        this.lblTitulo3.ForeColor = System.Drawing.Color.Red;
+                        this.cardCotiza3.Visible = false;
+                    }));
+                }
+                catch (Exception ex2)
+                {
+                    Application.Exit();
+                }
+            }
+
+            try
+            {
+                try
+                {
+                    this.Invoke(new Action(() =>
+                    {
+                        this.lblCotiCompra4.Text = $"US$ {dBolsa.compra.ToString()}";
+                        this.lblCotiVenta4.Text = $"US$ {dBolsa.venta.ToString()}";
+                        this.lblActuaDato4.Text = dBolsa.parseFechaActualizacion();
+                    }));
+                }
+                catch (Exception ex2)
+                {
+                    Application.Exit();
+                }
+            }
+            catch (Exception ex)
+            {
+                try
+                {
+                    this.Invoke(new Action(() =>
+                    {
+                        this.lblTitulo4.ForeColor = System.Drawing.Color.Red;
+                        this.cardCotiza4.Visible = false;
+                    }));
+                }
+                catch (Exception ex2)
+                {
+                    Application.Exit();
+                }
             }
         }
 
@@ -208,32 +278,41 @@ namespace Cotiza
         {
             while (loop)
             {
-                //Seteo la información de DolarApi en los laberls de las tarjetas
-                setMonedas();
-
-                if (ultFechaActualizada == default)
+                try
                 {
-                    ultFechaActualizada = dOficial.parseFechaActualizacion();
-                    //Metodo asincrono para mostrar un MessageBox en un hilo sin suspender su ejecución
-                    await Task.Run(() =>
-                    {
-                        MessageBox.Show($"Se abrió el CotizArg.\nSe visualizará la cotización actual.\nFecha: {ultFechaActualizada}", "CotizArg: Actualización", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                    });
+                    //Seteo la información de DolarApi en los laberls de las tarjetas
+                    setMonedas();
 
-                    setCardsInfo();
-                }   
-                else if (ultFechaActualizada != dOficial.parseFechaActualizacion())
-                {
-                    //Metodo asincrono para mostrar un MessageBox en un hilo sin suspender su ejecución
-                    await Task.Run(() =>
+                    if (ultFechaActualizada == default)
                     {
-                        MessageBox.Show($"Hay una nueva cotización.\nLa misma se modificará.\nFecha: {ultFechaActualizada}", "CotizArg: Actualización", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                    });
-                    
-                    setCardsInfo();
-                    ultFechaActualizada = dOficial.parseFechaActualizacion();
+                        ultFechaActualizada = dOficial.parseFechaActualizacion();
+                        //Metodo asincrono para mostrar un MessageBox en un hilo sin suspender su ejecución
+                        await Task.Run(() =>
+                        {
+                            MessageBox.Show($"Se abrió CotizArg.\nSe visualizará la cotización actual.\nFecha: {ultFechaActualizada}", "CotizArg: Actualización", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        });
+
+                        setCardsInfo();
+                    }
+                    else if (ultFechaActualizada != dOficial.parseFechaActualizacion())
+                    {
+                        //Metodo asincrono para mostrar un MessageBox en un hilo sin suspender su ejecución
+                        await Task.Run(() =>
+                        {
+                            MessageBox.Show($"Hay una nueva cotización.\nLa misma se modificará.\nFecha: {ultFechaActualizada}", "CotizArg: Actualización", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        });
+
+                        setCardsInfo();
+                        ultFechaActualizada = dOficial.parseFechaActualizacion();
+                    }
+                    Thread.Sleep(60000);
                 }
-                Thread.Sleep(60000);
+                catch(Exception ex)
+                {
+                    setCardsInfo();
+                    loop = false;
+                }
+                
             }
         }
 
@@ -292,11 +371,14 @@ namespace Cotiza
                 case "lblTitulo3":
                     expandCards(cardCotiza3);
                     break;
+                case "lblTitulo4":
+                    expandCards(cardCotiza4);
+                    break;
             }
         }
 
         // Logica de expansión de las tarjetas
-        bool[] cardExpand = {true, true, true};
+        bool[] cardExpand = {true, true, true, true};
         private void expandCards(Panel card)
         {
             if (cardExpand[0] && card.Name=="cardCotiza1")
@@ -320,6 +402,16 @@ namespace Cotiza
                 }
             }
             else if (cardExpand[1] && card.Name == "cardCotiza3")
+            {
+                card.Height -= 10;
+
+                if (card.Height == card.MinimumSize.Height)
+                {
+                    cardExpand[1] = false;
+                    timerCards.Stop();
+                }
+            }
+            else if (cardExpand[1] && card.Name == "cardCotiza4")
             {
                 card.Height -= 10;
 
@@ -361,10 +453,54 @@ namespace Cotiza
                         timerCards.Stop();
                     }
                 }
+                else if (!cardExpand[1] && card.Name == "cardCotiza4")
+                {
+                    card.Height += 10;
 
+                    if (card.Height == card.MaximumSize.Height)
+                    {
+                        cardExpand[1] = true;
+                        timerCards.Stop();
+                    }
+                }
             }
         }
 
+
+
+
+        bool dashboardExpand = false;
+        private void timerDashboard_Tick(object sender, EventArgs e)
+        {
+            if (!dashboardExpand)
+            {
+                this.btnExtendGo.Visible = false;
+                this.btnExtendGo.Enabled = false;
+                this.Width += 10;
+                containerControls.Location = new Point(containerControls.Location.X + 10, containerControls.Location.Y);
+                if (this.Width == this.MaximumSize.Width)
+                {
+                    dashboardExpand = true;
+                    timerDashboard.Stop();
+                }
+            }
+            else
+            {
+                this.Width -= 10;
+                containerControls.Location = new Point(containerControls.Location.X - 10, containerControls.Location.Y);
+                if (this.Width == this.MinimumSize.Width)
+                {
+                    dashboardExpand = false;
+                    timerDashboard.Stop();
+                    this.btnExtendGo.Visible = true;
+                    this.btnExtendGo.Enabled = true;
+                }
+            }
+        }
+        private void btnExtend_Click(object sender, EventArgs e)
+        {
+            timerDashboard.Start();
+        }
 
 
 

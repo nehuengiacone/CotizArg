@@ -73,6 +73,26 @@ namespace Cotiza.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap angleleft_106625 {
+            get {
+                object obj = ResourceManager.GetObject("angleleft_106625", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap angleright_106681 {
+            get {
+                object obj = ResourceManager.GetObject("angleright_106681", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap closewindowapplication_cerca_ventan_2874 {
             get {
                 object obj = ResourceManager.GetObject("closewindowapplication_cerca_ventan_2874", resourceCulture);

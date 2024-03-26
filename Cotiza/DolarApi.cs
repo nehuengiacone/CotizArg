@@ -35,7 +35,6 @@ namespace API
 
                     Moneda moneda = JsonSerializer.Deserialize<Moneda>(contenido);
 
-
                     if (response.IsSuccessStatusCode)
                     {
                         return moneda;
