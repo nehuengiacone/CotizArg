@@ -69,23 +69,23 @@
             this.lblActualizacion4 = new System.Windows.Forms.Label();
             this.lblVenta4 = new System.Windows.Forms.Label();
             this.lblCompra4 = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
+            this.cardCotiza5 = new System.Windows.Forms.Panel();
+            this.lblActuaDato5 = new System.Windows.Forms.Label();
+            this.lblCotiVenta5 = new System.Windows.Forms.Label();
+            this.lblCotiCompra5 = new System.Windows.Forms.Label();
+            this.lblActualizacion5 = new System.Windows.Forms.Label();
+            this.lblVenta5 = new System.Windows.Forms.Label();
+            this.lblCompra5 = new System.Windows.Forms.Label();
+            this.cardCotiza6 = new System.Windows.Forms.Panel();
+            this.lblActuaDato6 = new System.Windows.Forms.Label();
+            this.lblCotiVenta6 = new System.Windows.Forms.Label();
+            this.lblCotiCompra6 = new System.Windows.Forms.Label();
+            this.lblActualizacion6 = new System.Windows.Forms.Label();
+            this.lblVenta6 = new System.Windows.Forms.Label();
+            this.lblCompra6 = new System.Windows.Forms.Label();
             this.lblTitulo4 = new System.Windows.Forms.Label();
-            this.label20 = new System.Windows.Forms.Label();
-            this.label21 = new System.Windows.Forms.Label();
+            this.lblTitulo5 = new System.Windows.Forms.Label();
+            this.lblTitulo6 = new System.Windows.Forms.Label();
             this.btnExtendGo = new System.Windows.Forms.Button();
             this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.timerDashboard = new System.Windows.Forms.Timer(this.components);
@@ -99,8 +99,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.cardCotiza3.SuspendLayout();
             this.cardCotiza4.SuspendLayout();
-            this.panel2.SuspendLayout();
-            this.panel3.SuspendLayout();
+            this.cardCotiza5.SuspendLayout();
+            this.cardCotiza6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -599,173 +599,173 @@
             this.lblCompra4.TabIndex = 4;
             this.lblCompra4.Text = "COMPRA";
             // 
-            // panel2
+            // cardCotiza5
             // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(29)))), ((int)(((byte)(42)))));
-            this.panel2.Controls.Add(this.label7);
-            this.panel2.Controls.Add(this.label8);
-            this.panel2.Controls.Add(this.label9);
-            this.panel2.Controls.Add(this.label10);
-            this.panel2.Controls.Add(this.label11);
-            this.panel2.Controls.Add(this.label12);
-            this.panel2.Location = new System.Drawing.Point(412, 261);
-            this.panel2.MaximumSize = new System.Drawing.Size(340, 142);
-            this.panel2.MinimumSize = new System.Drawing.Size(340, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(340, 142);
-            this.panel2.TabIndex = 3;
+            this.cardCotiza5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(29)))), ((int)(((byte)(42)))));
+            this.cardCotiza5.Controls.Add(this.lblActuaDato5);
+            this.cardCotiza5.Controls.Add(this.lblCotiVenta5);
+            this.cardCotiza5.Controls.Add(this.lblCotiCompra5);
+            this.cardCotiza5.Controls.Add(this.lblActualizacion5);
+            this.cardCotiza5.Controls.Add(this.lblVenta5);
+            this.cardCotiza5.Controls.Add(this.lblCompra5);
+            this.cardCotiza5.Location = new System.Drawing.Point(412, 261);
+            this.cardCotiza5.MaximumSize = new System.Drawing.Size(340, 142);
+            this.cardCotiza5.MinimumSize = new System.Drawing.Size(340, 0);
+            this.cardCotiza5.Name = "cardCotiza5";
+            this.cardCotiza5.Size = new System.Drawing.Size(340, 142);
+            this.cardCotiza5.TabIndex = 3;
             // 
-            // label7
+            // lblActuaDato5
             // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Consolas", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(170)))), ((int)(((byte)(0)))));
-            this.label7.Location = new System.Drawing.Point(179, 114);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(0, 13);
-            this.label7.TabIndex = 5;
+            this.lblActuaDato5.AutoSize = true;
+            this.lblActuaDato5.Font = new System.Drawing.Font("Consolas", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblActuaDato5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(170)))), ((int)(((byte)(0)))));
+            this.lblActuaDato5.Location = new System.Drawing.Point(179, 114);
+            this.lblActuaDato5.Name = "lblActuaDato5";
+            this.lblActuaDato5.Size = new System.Drawing.Size(0, 13);
+            this.lblActuaDato5.TabIndex = 5;
             // 
-            // label8
+            // lblCotiVenta5
             // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Consolas", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(170)))), ((int)(((byte)(0)))));
-            this.label8.Location = new System.Drawing.Point(176, 51);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(134, 32);
-            this.label8.TabIndex = 5;
-            this.label8.Text = "US$ 0.00";
+            this.lblCotiVenta5.AutoSize = true;
+            this.lblCotiVenta5.Font = new System.Drawing.Font("Consolas", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCotiVenta5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(170)))), ((int)(((byte)(0)))));
+            this.lblCotiVenta5.Location = new System.Drawing.Point(176, 51);
+            this.lblCotiVenta5.Name = "lblCotiVenta5";
+            this.lblCotiVenta5.Size = new System.Drawing.Size(134, 32);
+            this.lblCotiVenta5.TabIndex = 5;
+            this.lblCotiVenta5.Text = "US$ 0.00";
             // 
-            // label9
+            // lblCotiCompra5
             // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Consolas", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(170)))), ((int)(((byte)(0)))));
-            this.label9.Location = new System.Drawing.Point(176, 11);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(134, 32);
-            this.label9.TabIndex = 5;
-            this.label9.Text = "US$ 0.00";
+            this.lblCotiCompra5.AutoSize = true;
+            this.lblCotiCompra5.Font = new System.Drawing.Font("Consolas", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCotiCompra5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(170)))), ((int)(((byte)(0)))));
+            this.lblCotiCompra5.Location = new System.Drawing.Point(176, 11);
+            this.lblCotiCompra5.Name = "lblCotiCompra5";
+            this.lblCotiCompra5.Size = new System.Drawing.Size(134, 32);
+            this.lblCotiCompra5.TabIndex = 5;
+            this.lblCotiCompra5.Text = "US$ 0.00";
             // 
-            // label10
+            // lblActualizacion5
             // 
-            this.label10.AutoSize = true;
-            this.label10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label10.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.label10.Location = new System.Drawing.Point(4, 114);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(95, 13);
-            this.label10.TabIndex = 4;
-            this.label10.Text = "ACTUALIZACIÓN";
+            this.lblActualizacion5.AutoSize = true;
+            this.lblActualizacion5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lblActualizacion5.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblActualizacion5.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.lblActualizacion5.Location = new System.Drawing.Point(4, 114);
+            this.lblActualizacion5.Name = "lblActualizacion5";
+            this.lblActualizacion5.Size = new System.Drawing.Size(95, 13);
+            this.lblActualizacion5.TabIndex = 4;
+            this.lblActualizacion5.Text = "ACTUALIZACIÓN";
             // 
-            // label11
+            // lblVenta5
             // 
-            this.label11.AutoSize = true;
-            this.label11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label11.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.label11.Location = new System.Drawing.Point(3, 51);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(77, 28);
-            this.label11.TabIndex = 4;
-            this.label11.Text = "VENTA";
+            this.lblVenta5.AutoSize = true;
+            this.lblVenta5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lblVenta5.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblVenta5.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.lblVenta5.Location = new System.Drawing.Point(3, 51);
+            this.lblVenta5.Name = "lblVenta5";
+            this.lblVenta5.Size = new System.Drawing.Size(77, 28);
+            this.lblVenta5.TabIndex = 4;
+            this.lblVenta5.Text = "VENTA";
             // 
-            // label12
+            // lblCompra5
             // 
-            this.label12.AutoSize = true;
-            this.label12.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label12.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.label12.Location = new System.Drawing.Point(3, 11);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(97, 28);
-            this.label12.TabIndex = 4;
-            this.label12.Text = "COMPRA";
+            this.lblCompra5.AutoSize = true;
+            this.lblCompra5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lblCompra5.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCompra5.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.lblCompra5.Location = new System.Drawing.Point(3, 11);
+            this.lblCompra5.Name = "lblCompra5";
+            this.lblCompra5.Size = new System.Drawing.Size(97, 28);
+            this.lblCompra5.TabIndex = 4;
+            this.lblCompra5.Text = "COMPRA";
             // 
-            // panel3
+            // cardCotiza6
             // 
-            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(29)))), ((int)(((byte)(42)))));
-            this.panel3.Controls.Add(this.label13);
-            this.panel3.Controls.Add(this.label14);
-            this.panel3.Controls.Add(this.label15);
-            this.panel3.Controls.Add(this.label16);
-            this.panel3.Controls.Add(this.label17);
-            this.panel3.Controls.Add(this.label18);
-            this.panel3.Location = new System.Drawing.Point(412, 445);
-            this.panel3.MaximumSize = new System.Drawing.Size(340, 142);
-            this.panel3.MinimumSize = new System.Drawing.Size(340, 0);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(340, 142);
-            this.panel3.TabIndex = 3;
+            this.cardCotiza6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(29)))), ((int)(((byte)(42)))));
+            this.cardCotiza6.Controls.Add(this.lblActuaDato6);
+            this.cardCotiza6.Controls.Add(this.lblCotiVenta6);
+            this.cardCotiza6.Controls.Add(this.lblCotiCompra6);
+            this.cardCotiza6.Controls.Add(this.lblActualizacion6);
+            this.cardCotiza6.Controls.Add(this.lblVenta6);
+            this.cardCotiza6.Controls.Add(this.lblCompra6);
+            this.cardCotiza6.Location = new System.Drawing.Point(412, 445);
+            this.cardCotiza6.MaximumSize = new System.Drawing.Size(340, 142);
+            this.cardCotiza6.MinimumSize = new System.Drawing.Size(340, 0);
+            this.cardCotiza6.Name = "cardCotiza6";
+            this.cardCotiza6.Size = new System.Drawing.Size(340, 142);
+            this.cardCotiza6.TabIndex = 3;
             // 
-            // label13
+            // lblActuaDato6
             // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Consolas", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(170)))), ((int)(((byte)(0)))));
-            this.label13.Location = new System.Drawing.Point(179, 114);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(0, 13);
-            this.label13.TabIndex = 5;
+            this.lblActuaDato6.AutoSize = true;
+            this.lblActuaDato6.Font = new System.Drawing.Font("Consolas", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblActuaDato6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(170)))), ((int)(((byte)(0)))));
+            this.lblActuaDato6.Location = new System.Drawing.Point(179, 114);
+            this.lblActuaDato6.Name = "lblActuaDato6";
+            this.lblActuaDato6.Size = new System.Drawing.Size(0, 13);
+            this.lblActuaDato6.TabIndex = 5;
             // 
-            // label14
+            // lblCotiVenta6
             // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Consolas", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(170)))), ((int)(((byte)(0)))));
-            this.label14.Location = new System.Drawing.Point(176, 51);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(134, 32);
-            this.label14.TabIndex = 5;
-            this.label14.Text = "US$ 0.00";
+            this.lblCotiVenta6.AutoSize = true;
+            this.lblCotiVenta6.Font = new System.Drawing.Font("Consolas", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCotiVenta6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(170)))), ((int)(((byte)(0)))));
+            this.lblCotiVenta6.Location = new System.Drawing.Point(176, 51);
+            this.lblCotiVenta6.Name = "lblCotiVenta6";
+            this.lblCotiVenta6.Size = new System.Drawing.Size(134, 32);
+            this.lblCotiVenta6.TabIndex = 5;
+            this.lblCotiVenta6.Text = "US$ 0.00";
             // 
-            // label15
+            // lblCotiCompra6
             // 
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Consolas", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(170)))), ((int)(((byte)(0)))));
-            this.label15.Location = new System.Drawing.Point(176, 11);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(134, 32);
-            this.label15.TabIndex = 5;
-            this.label15.Text = "US$ 0.00";
+            this.lblCotiCompra6.AutoSize = true;
+            this.lblCotiCompra6.Font = new System.Drawing.Font("Consolas", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCotiCompra6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(170)))), ((int)(((byte)(0)))));
+            this.lblCotiCompra6.Location = new System.Drawing.Point(176, 11);
+            this.lblCotiCompra6.Name = "lblCotiCompra6";
+            this.lblCotiCompra6.Size = new System.Drawing.Size(134, 32);
+            this.lblCotiCompra6.TabIndex = 5;
+            this.lblCotiCompra6.Text = "US$ 0.00";
             // 
-            // label16
+            // lblActualizacion6
             // 
-            this.label16.AutoSize = true;
-            this.label16.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label16.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.label16.Location = new System.Drawing.Point(4, 114);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(95, 13);
-            this.label16.TabIndex = 4;
-            this.label16.Text = "ACTUALIZACIÓN";
+            this.lblActualizacion6.AutoSize = true;
+            this.lblActualizacion6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lblActualizacion6.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblActualizacion6.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.lblActualizacion6.Location = new System.Drawing.Point(4, 114);
+            this.lblActualizacion6.Name = "lblActualizacion6";
+            this.lblActualizacion6.Size = new System.Drawing.Size(95, 13);
+            this.lblActualizacion6.TabIndex = 4;
+            this.lblActualizacion6.Text = "ACTUALIZACIÓN";
             // 
-            // label17
+            // lblVenta6
             // 
-            this.label17.AutoSize = true;
-            this.label17.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label17.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.label17.Location = new System.Drawing.Point(3, 51);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(77, 28);
-            this.label17.TabIndex = 4;
-            this.label17.Text = "VENTA";
+            this.lblVenta6.AutoSize = true;
+            this.lblVenta6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lblVenta6.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblVenta6.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.lblVenta6.Location = new System.Drawing.Point(3, 51);
+            this.lblVenta6.Name = "lblVenta6";
+            this.lblVenta6.Size = new System.Drawing.Size(77, 28);
+            this.lblVenta6.TabIndex = 4;
+            this.lblVenta6.Text = "VENTA";
             // 
-            // label18
+            // lblCompra6
             // 
-            this.label18.AutoSize = true;
-            this.label18.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label18.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.label18.Location = new System.Drawing.Point(3, 11);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(97, 28);
-            this.label18.TabIndex = 4;
-            this.label18.Text = "COMPRA";
+            this.lblCompra6.AutoSize = true;
+            this.lblCompra6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lblCompra6.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCompra6.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.lblCompra6.Location = new System.Drawing.Point(3, 11);
+            this.lblCompra6.Name = "lblCompra6";
+            this.lblCompra6.Size = new System.Drawing.Size(97, 28);
+            this.lblCompra6.TabIndex = 4;
+            this.lblCompra6.Text = "COMPRA";
             // 
             // lblTitulo4
             // 
@@ -774,41 +774,41 @@
             this.lblTitulo4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lblTitulo4.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitulo4.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.lblTitulo4.Location = new System.Drawing.Point(523, 37);
+            this.lblTitulo4.Location = new System.Drawing.Point(531, 37);
             this.lblTitulo4.Name = "lblTitulo4";
             this.lblTitulo4.Size = new System.Drawing.Size(102, 37);
             this.lblTitulo4.TabIndex = 4;
             this.lblTitulo4.Text = "BOLSA";
             this.lblTitulo4.Click += new System.EventHandler(this.lblTitulos_Click);
             // 
-            // label20
+            // lblTitulo5
             // 
-            this.label20.AutoSize = true;
-            this.label20.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.label20.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label20.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label20.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.label20.Location = new System.Drawing.Point(542, 221);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(81, 37);
-            this.label20.TabIndex = 4;
-            this.label20.Text = "BLUE";
-            this.label20.Click += new System.EventHandler(this.lblTitulos_Click);
+            this.lblTitulo5.AutoSize = true;
+            this.lblTitulo5.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lblTitulo5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lblTitulo5.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitulo5.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.lblTitulo5.Location = new System.Drawing.Point(526, 221);
+            this.lblTitulo5.Name = "lblTitulo5";
+            this.lblTitulo5.Size = new System.Drawing.Size(113, 37);
+            this.lblTitulo5.TabIndex = 4;
+            this.lblTitulo5.Text = "CRIPTO";
+            this.lblTitulo5.Click += new System.EventHandler(this.lblTitulos_Click);
             // 
-            // label21
+            // lblTitulo6
             // 
-            this.label21.AutoSize = true;
-            this.label21.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.label21.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label21.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label21.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.label21.Location = new System.Drawing.Point(518, 405);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(128, 37);
-            this.label21.TabIndex = 4;
-            this.label21.Text = "TARJETA";
-            this.label21.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label21.Click += new System.EventHandler(this.lblTitulos_Click);
+            this.lblTitulo6.AutoSize = true;
+            this.lblTitulo6.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lblTitulo6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lblTitulo6.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitulo6.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.lblTitulo6.Location = new System.Drawing.Point(497, 405);
+            this.lblTitulo6.Name = "lblTitulo6";
+            this.lblTitulo6.Size = new System.Drawing.Size(170, 37);
+            this.lblTitulo6.TabIndex = 4;
+            this.lblTitulo6.Text = "MAYORISTA";
+            this.lblTitulo6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblTitulo6.Click += new System.EventHandler(this.lblTitulos_Click);
             // 
             // btnExtendGo
             // 
@@ -847,9 +847,6 @@
             this.btnExtendBack.UseVisualStyleBackColor = true;
             this.btnExtendBack.Click += new System.EventHandler(this.btnExtend_Click);
             // 
-            // toolTipDashGo
-            // 
-            // 
             // frmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -858,14 +855,14 @@
             this.ClientSize = new System.Drawing.Size(400, 612);
             this.Controls.Add(this.btnExtendBack);
             this.Controls.Add(this.btnExtendGo);
-            this.Controls.Add(this.label21);
+            this.Controls.Add(this.lblTitulo6);
             this.Controls.Add(this.lblTitulo3);
-            this.Controls.Add(this.label20);
+            this.Controls.Add(this.lblTitulo5);
             this.Controls.Add(this.lblTitulo4);
             this.Controls.Add(this.lblTitulo2);
-            this.Controls.Add(this.panel3);
+            this.Controls.Add(this.cardCotiza6);
             this.Controls.Add(this.lblTitulo1);
-            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.cardCotiza5);
             this.Controls.Add(this.cardCotiza3);
             this.Controls.Add(this.cardCotiza4);
             this.Controls.Add(this.cardCotiza2);
@@ -892,10 +889,10 @@
             this.cardCotiza3.PerformLayout();
             this.cardCotiza4.ResumeLayout(false);
             this.cardCotiza4.PerformLayout();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
+            this.cardCotiza5.ResumeLayout(false);
+            this.cardCotiza5.PerformLayout();
+            this.cardCotiza6.ResumeLayout(false);
+            this.cardCotiza6.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -942,23 +939,23 @@
         private System.Windows.Forms.Label lblActualizacion4;
         private System.Windows.Forms.Label lblVenta4;
         private System.Windows.Forms.Label lblCompra4;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Panel cardCotiza5;
+        private System.Windows.Forms.Label lblActuaDato5;
+        private System.Windows.Forms.Label lblCotiVenta5;
+        private System.Windows.Forms.Label lblCotiCompra5;
+        private System.Windows.Forms.Label lblActualizacion5;
+        private System.Windows.Forms.Label lblVenta5;
+        private System.Windows.Forms.Label lblCompra5;
+        private System.Windows.Forms.Panel cardCotiza6;
+        private System.Windows.Forms.Label lblActuaDato6;
+        private System.Windows.Forms.Label lblCotiVenta6;
+        private System.Windows.Forms.Label lblCotiCompra6;
+        private System.Windows.Forms.Label lblActualizacion6;
+        private System.Windows.Forms.Label lblVenta6;
+        private System.Windows.Forms.Label lblCompra6;
         private System.Windows.Forms.Label lblTitulo4;
-        private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.Label lblTitulo5;
+        private System.Windows.Forms.Label lblTitulo6;
         private System.Windows.Forms.Button btnExtendGo;
         private System.Windows.Forms.Panel containerControls;
         private System.Windows.Forms.Timer timerDashboard;

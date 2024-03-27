@@ -20,6 +20,8 @@ namespace Cotiza
         private Moneda dOficial;
         private Moneda dTarjeta;
         private Moneda dBolsa;
+        private Moneda dCripto;
+        private Moneda dMayorista;
         private static string ultFechaActualizada = default;
         private Thread thrActualizacion;
         private bool loop = true;
@@ -101,6 +103,8 @@ namespace Cotiza
             cardCotiza_Paint(cardCotiza2);
             cardCotiza_Paint(cardCotiza3);
             cardCotiza_Paint(cardCotiza4);
+            cardCotiza_Paint(cardCotiza5);
+            cardCotiza_Paint(cardCotiza6);
             toolTipDashGo.SetToolTip(this.btnExtendGo, "Extender Dashboard");
             toolTipDashBack.SetToolTip(this.btnExtendBack, "Comprimir Dashboard");
 
@@ -157,6 +161,8 @@ namespace Cotiza
             dOficial = dolarApi.getRequest("oficial");
             dTarjeta = dolarApi.getRequest("tarjeta");
             dBolsa = dolarApi.getRequest("bolsa");
+            dCripto = dolarApi.getRequest("cripto");
+            dMayorista= dolarApi.getRequest("mayorista");
 
         }
         
@@ -271,6 +277,70 @@ namespace Cotiza
                     Application.Exit();
                 }
             }
+
+            try
+            {
+                try
+                {
+                    this.Invoke(new Action(() =>
+                    {
+                        this.lblCotiCompra5.Text = $"US$ {dCripto.compra.ToString()}";
+                        this.lblCotiVenta5.Text = $"US$ {dCripto.venta.ToString()}";
+                        this.lblActuaDato5.Text = dCripto.parseFechaActualizacion();
+                    }));
+                }
+                catch (Exception ex2)
+                {
+                    Application.Exit();
+                }
+            }
+            catch (Exception ex)
+            {
+                try
+                {
+                    this.Invoke(new Action(() =>
+                    {
+                        this.lblTitulo5.ForeColor = System.Drawing.Color.Red;
+                        this.cardCotiza5.Visible = false;
+                    }));
+                }
+                catch (Exception ex2)
+                {
+                    Application.Exit();
+                }
+            }
+
+            try
+            {
+                try
+                {
+                    this.Invoke(new Action(() =>
+                    {
+                        this.lblCotiCompra6.Text = $"US$ {dMayorista.compra.ToString()}";
+                        this.lblCotiVenta6.Text = $"US$ {dMayorista.venta.ToString()}";
+                        this.lblActuaDato6.Text = dMayorista.parseFechaActualizacion();
+                    }));
+                }
+                catch (Exception ex2)
+                {
+                    Application.Exit();
+                }
+            }
+            catch (Exception ex)
+            {
+                try
+                {
+                    this.Invoke(new Action(() =>
+                    {
+                        this.lblTitulo6.ForeColor = System.Drawing.Color.Red;
+                        this.cardCotiza6.Visible = false;
+                    }));
+                }
+                catch (Exception ex2)
+                {
+                    Application.Exit();
+                }
+            }
         }
 
         //logica del subproceso
@@ -374,6 +444,12 @@ namespace Cotiza
                 case "lblTitulo4":
                     expandCards(cardCotiza4);
                     break;
+                case "lblTitulo5":
+                    expandCards(cardCotiza5);
+                    break;
+                case "lblTitulo6":
+                    expandCards(cardCotiza6);
+                    break;
             }
         }
 
@@ -421,6 +497,26 @@ namespace Cotiza
                     timerCards.Stop();
                 }
             }
+            else if (cardExpand[1] && card.Name == "cardCotiza5")
+            {
+                card.Height -= 10;
+
+                if (card.Height == card.MinimumSize.Height)
+                {
+                    cardExpand[1] = false;
+                    timerCards.Stop();
+                }
+            }
+            else if (cardExpand[1] && card.Name == "cardCotiza6")
+            {
+                card.Height -= 10;
+
+                if (card.Height == card.MinimumSize.Height)
+                {
+                    cardExpand[1] = false;
+                    timerCards.Stop();
+                }
+            }
             else
             {
                 if(!cardExpand[0] && card.Name == "cardCotiza1")
@@ -454,6 +550,26 @@ namespace Cotiza
                     }
                 }
                 else if (!cardExpand[1] && card.Name == "cardCotiza4")
+                {
+                    card.Height += 10;
+
+                    if (card.Height == card.MaximumSize.Height)
+                    {
+                        cardExpand[1] = true;
+                        timerCards.Stop();
+                    }
+                }
+                else if (!cardExpand[1] && card.Name == "cardCotiza5")
+                {
+                    card.Height += 10;
+
+                    if (card.Height == card.MaximumSize.Height)
+                    {
+                        cardExpand[1] = true;
+                        timerCards.Stop();
+                    }
+                }
+                else if (!cardExpand[1] && card.Name == "cardCotiza6")
                 {
                     card.Height += 10;
 
