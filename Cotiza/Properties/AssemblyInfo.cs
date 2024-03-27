@@ -8,10 +8,10 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("CotizArg")]
 [assembly: AssemblyDescription("Cotización del Dolar en Argentina")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany(".")]
+[assembly: AssemblyCompany("Nehuen Giacone")]
 [assembly: AssemblyProduct("CotizArg")]
 [assembly: AssemblyCopyright("Copyright ©  2024")]
-[assembly: AssemblyTrademark("")]
+[assembly: AssemblyTrademark("Nehuen Giacone")]
 [assembly: AssemblyCulture("")]
 
 // Si establece ComVisible en false, los tipos de este ensamblado no estarán visibles 
@@ -32,5 +32,5 @@ using System.Runtime.InteropServices;
 // Puede especificar todos los valores o usar los valores predeterminados de número de compilación y de revisión
 // utilizando el carácter "*", como se muestra a continuación:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("1.0.0.0")]
-[assembly: AssemblyFileVersion("1.0.0.0")]
+[assembly: AssemblyVersion("2024.1.2.0")]
+[assembly: AssemblyFileVersion("2024.1.2.0")]
